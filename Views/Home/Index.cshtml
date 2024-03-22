@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model BooksListViewModel
+    <h1> Welcome to our Books Database</h1>
+
+
+@foreach (Book b in Model.Books)
+{
+    <h3>@b.Title</h3>
+    <ul>
+        <li> BookID: @b.BookID</li>
+        <li> Author: @b.Author </li>
+        <li> Publisher: @b.Publisher</li>
+        <li> ISBN: @b.ISBN</li>
+        <li> Classified as: @b.Classification</li>
+        <li> Category: @b.Category</li>
+        <li> Page Count is: @b.PageCount</li>
+        <li> Price: @b.Price</li>
+    </ul>
+
+}
+
+<div page-model="@Model.Pagination" page-action="Index"></div>
